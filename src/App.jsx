@@ -2,12 +2,13 @@ import { useState } from 'react'
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import { Toaster } from "react-hot-toast";
-import { SignUp } from './screens/Auth/SignUp/SignUp.jsx'
-import { SignIn } from './screens/Auth/SignIn/SignIn.jsx'
-import { Navbar } from './components/Navbar/Navbar.jsx'
-import { LandingPage } from './screens/LandingPage/LandingPage.jsx'
-import { StudentDashboard } from './screens/StudentDashboard/StudentDashboard.jsx'
-import { CourseCatalog } from "./components/CourseCatalog/CourseCatalog.jsx"
+import { SignUp } from './screens/Auth/SignUp/SignUp.jsx';
+import { SignIn } from './screens/Auth/SignIn/SignIn.jsx';
+import { Navbar } from './components/Navbar/Navbar.jsx';
+import { LandingPage } from './screens/LandingPage/LandingPage.jsx';
+import { StudentDashboard } from './screens/StudentDashboard/StudentDashboard.jsx';
+import { CourseCatalog } from "./components/CourseCatalog/CourseCatalog.jsx";
+import { CourseEnrollment } from "./screens/CourseEnrollment/CourseEnrollment.jsx";
 
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
           element={<StudentDashboard student={student} />}
         />
         <Route path="/courses" element={<CourseCatalog />} />
+        <Route path="/student/enrollments" element={<CourseEnrollment/>} />
       </Routes>
       <Toaster />
     </div>
