@@ -7,6 +7,7 @@ import { SignIn } from './screens/Auth/SignIn/SignIn.jsx'
 import { Navbar } from './components/Navbar/Navbar.jsx'
 import { LandingPage } from './screens/LandingPage/LandingPage.jsx'
 import { StudentDashboard } from './screens/StudentDashboard/StudentDashboard.jsx'
+import { CourseCatalog } from "./components/CourseCatalog/CourseCatalog.jsx"
 
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
           path="/students/dashboard"
           element={<StudentDashboard student={student} />}
         />
+        <Route path="/courses" element={<CourseCatalog />} />
       </Routes>
       <Toaster />
     </div>
