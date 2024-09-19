@@ -17,15 +17,8 @@ export const SignIn = ({ setStudent }) => {
   const handleSignIn = async (event) => {
     event.preventDefault();
     const student = await studentSignIn(formData);
-    if (student) {
-        setStudent(student);
-        navigate("/students/dashboard");
-    } else {
-        alert("Invalid username or password");
-    }
-    
-    
-    
+    setStudent(student);
+    navigate("/students/dashboard");
   };
 
   return (
