@@ -2,19 +2,19 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./landing-page.css"
 
+export const LandingPage = ({ setQuery }) => {
+  const [input, setInput] = useState("")
+  const navigate = useNavigate();
 
-export const LandingPage = () => {
-const [input, setInput] = useState("")
-const navigate = useNavigate();
 
+  const handleChange = (event) => {
+    setInput(event.target.value)
+  }
 
-const handleChange = (event) => {
-  setInput(event.target.value)
-}
-
-const handleClick = () =>{
-  navigate("/courses");
-}
+  const handleClick = () => {
+    setQuery(input)
+    navigate("/courses");
+  }
 
 
   return (

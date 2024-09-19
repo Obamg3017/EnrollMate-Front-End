@@ -1,15 +1,16 @@
-import { FilterOption } from "./FilterOption"
-
-export const Filter = ({ filterType, filterOptions }) => {
-    plural = filterType + 's'
-    filterOptions = []
+export const Filter = ({ filterKey, filterOptions, handleSelect, filterForm }) => {
+    const capitalized = filterKey.charAt(0).toUpperCase() + filterKey.slice(1)
     return (
-        <div className={filterType + '-filter'}>
-            <label for={filterType + '-select'}>Choose a {filterType}:</label>
-            <select name={plural} id={filterType + '-select'}>
-                <option value=''>--Select a {filterType} option--</option>
-                {filterOptions.map((option) => {
-                    return <FilterOption optionWord={option} />
+        <div className={`${filterKey}-filter`}>
+            <label htmlFor={`${filterKey}-select`}>Choose a {filterKey}:</label>
+            <select
+                name={filterKey}
+                id={`${filterKey}-select`}
+                onChange={handleSelect}
+                value={filterForm[filterKey]}>
+                <option value=''>----{capitalized + 's'}----</option>
+                {filterOptions.map((option, index) => {
+                    return <option key={index} value={option}>{option}</option>
                 })}
             </select>
         </div>

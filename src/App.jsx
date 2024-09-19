@@ -12,6 +12,7 @@ import { CourseCatalog } from "./components/CourseCatalog/CourseCatalog.jsx"
 
 const App = () => {
   const [student, setStudent] = useState(null)
+  const [query, setQuery] = useState(null)
 
   return (
     <div>
@@ -25,12 +26,12 @@ const App = () => {
           path="/users/login"
           element={<SignIn setStudent={setStudent} />}
         />
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage setQuery={setQuery} />} />
         <Route
           path="/students/dashboard"
           element={<StudentDashboard student={student} />}
         />
-        <Route path="/courses" element={<CourseCatalog />} />
+        <Route path="/courses" element={<CourseCatalog query={query} />} />
       </Routes>
       <Toaster />
     </div>
