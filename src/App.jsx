@@ -9,6 +9,8 @@ import { LandingPage } from './screens/LandingPage/LandingPage.jsx';
 import { StudentDashboard } from './screens/StudentDashboard/StudentDashboard.jsx';
 import { CourseCatalog } from "./components/CourseCatalog/CourseCatalog.jsx";
 import { CourseEnrollment } from "./screens/CourseEnrollment/CourseEnrollment.jsx";
+import { About } from "./screens/About/About.jsx";
+import { ContactUs } from "./screens/ContactUs/ContactUs.jsx";
 
 
 const App = () => {
@@ -32,7 +34,9 @@ const App = () => {
           element={<StudentDashboard student={student} />}
         />
         <Route path="/courses" element={<CourseCatalog />} />
-        <Route path="/student/enrollments" element={<CourseEnrollment/>} />
+        <Route path="/student/enrollments" element={<CourseEnrollment />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
       <Toaster />
     </div>
