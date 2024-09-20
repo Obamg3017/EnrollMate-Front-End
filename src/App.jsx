@@ -17,9 +17,13 @@ import { Footer } from "./components/Footer/Footer.jsx";
 const App = () => {
   const [student, setStudent] = useState(null)
 
+  const handleSignOut = () => {
+    setStudent(null);
+  };
+
   return (
     <div>
-      <Navbar />
+      <Navbar student={student} handleSignOut={handleSignOut} />
       <Routes>
         <Route
           path="/students/register"
