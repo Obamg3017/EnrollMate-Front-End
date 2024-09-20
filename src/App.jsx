@@ -16,6 +16,7 @@ import { Footer } from "./components/Footer/Footer.jsx";
 
 const App = () => {
   const [student, setStudent] = useState(null)
+  const [query, setQuery] = useState(null)
 
   const handleSignOut = () => {
     setStudent(null);
@@ -33,17 +34,17 @@ const App = () => {
           path="/users/login"
           element={<SignIn setStudent={setStudent} />}
         />
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage setQuery={setQuery} />} />
         <Route
           path="/students/dashboard"
           element={<StudentDashboard student={student} />}
         />
-        <Route path="/courses" element={<CourseCatalog />} />
+        <Route path="/courses" element={<CourseCatalog query={query} />} />
         <Route path="/student/enrollments" element={<CourseEnrollment />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactUs />} />
-        <Route path="/footer" element={<Footer />} />
       </Routes>
+      <Route path="/footer" element={<Footer />} />
       <Toaster />
     </div>
   );
