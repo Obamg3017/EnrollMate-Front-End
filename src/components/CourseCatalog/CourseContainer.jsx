@@ -1,6 +1,6 @@
 import { CourseCard } from "./CourseCard"
 
-export const CourseContainer = (courses) => {
+export const CourseContainer = ({courses}) => {
   return (
     <div className="course-container">
         {courses.map((course) => {
