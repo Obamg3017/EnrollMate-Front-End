@@ -8,6 +8,7 @@ import { Navbar } from './components/Navbar/Navbar.jsx'
 import { LandingPage } from './screens/LandingPage/LandingPage.jsx'
 import { StudentDashboard } from './screens/StudentDashboard/StudentDashboard.jsx'
 import { CourseCatalog } from "./components/CourseCatalog/CourseCatalog.jsx"
+import { CourseEnrollment } from './screens/CourseEnrollment/CourseEnrollment.jsx'
 
 
 const App = () => {
@@ -26,12 +27,17 @@ const App = () => {
           path="/users/login"
           element={<SignIn setStudent={setStudent} />}
         />
-        <Route path="/" element={<LandingPage setQuery={setQuery} />} />
+        <Route
+          path="/"
+          element={<LandingPage setQuery={setQuery} />} />
         <Route
           path="/students/dashboard"
           element={<StudentDashboard student={student} />}
         />
-        <Route path="/courses" element={<CourseCatalog query={query} />} />
+        <Route
+          path="/courses"
+          element={<CourseCatalog query={query} />} />
+        <Route path='/students/enrollments' element={<CourseEnrollment />} />
       </Routes>
       <Toaster />
     </div>
