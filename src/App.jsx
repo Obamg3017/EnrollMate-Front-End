@@ -34,7 +34,9 @@ const App = () => {
           path="/users/login"
           element={<SignIn setStudent={setStudent} />}
         />
-        <Route path="/" element={<LandingPage setQuery={setQuery} />} />
+        <Route
+          path="/"
+          element={<LandingPage setQuery={setQuery} />} />
         <Route
           path="/students/dashboard"
           element={<StudentDashboard student={student} />}

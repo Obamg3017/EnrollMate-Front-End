@@ -1,17 +1,21 @@
 import { CourseCard } from "./CourseCard"
 
-export const CourseContainer = ({ courses }) => {
+export const CourseContainer = ({ className, courses, text, button }) => {
   return (
-    <div className="course-container">
+    <div className={`${className}-course-container`}>
       {courses ?
         <>
           {courses.map((course) => {
-            return <CourseCard key={course.name + course.instructor} course={course} />
+            return <CourseCard
+              key={course.name + course.instructor}
+              className={className}
+              course={course}
+              button={button} />
           }
           )}
         </>
         :
-        <p> Loading...</p>
+        <p>{text}</p>
       }
     </div>
   )
