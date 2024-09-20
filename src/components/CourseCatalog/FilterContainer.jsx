@@ -16,7 +16,6 @@ export const FilterContainer = ({ filtersDetails, filterCourses }) => {
     const handleSelect = (event) => {
         setFilterForm({ ...filterForm, [event.target.name]: event.target.value })
     }
-
     return (
         <form className='filter-container' onSubmit={handleSubmit}>
             {filterKeys.map((filterKey) => {
