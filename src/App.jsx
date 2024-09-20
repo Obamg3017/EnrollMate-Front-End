@@ -11,6 +11,7 @@ import { CourseCatalog } from "./components/CourseCatalog/CourseCatalog.jsx";
 import { CourseEnrollment } from "./screens/CourseEnrollment/CourseEnrollment.jsx";
 import { About } from "./screens/About/About.jsx";
 import { ContactUs } from "./screens/ContactUs/ContactUs.jsx";
+import { Footer } from "./components/Footer/Footer.jsx";
 
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="/student/enrollments" element={<CourseEnrollment />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/footer" element={<Footer />} />
       </Routes>
       <Toaster />
     </div>
