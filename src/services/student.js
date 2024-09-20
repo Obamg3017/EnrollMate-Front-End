@@ -18,3 +18,4 @@ export const showCourses = async () => {
         throw error
     }
 }
+

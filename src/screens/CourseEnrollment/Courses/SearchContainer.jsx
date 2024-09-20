@@ -1,8 +1,9 @@
 import { SearchBar } from "./SearchBar.jsx"
 import { CourseContainer } from "../../../components/CourseCatalog/CourseContainer.jsx"
 import { useState, useEffect } from "react"
+import { showCourses } from '../../../services/student.js'
 
-export const SearchContainer = ({addButton}) => {
+export const SearchContainer = ({ addButton }) => {
   const [courseResults, setCourseResults] = useState(null)
 
   let button = courseResults ? addButton : null
@@ -16,7 +17,6 @@ export const SearchContainer = ({addButton}) => {
           course.department_display.toLowerCase().includes(search.toLowerCase()) ||
           course.instructor_display.toLowerCase().includes(search.toLowerCase()))
       setCourseResults(courses)
-      setButtonState(true)
     } else setCourseResults(allCourses)
   }
 

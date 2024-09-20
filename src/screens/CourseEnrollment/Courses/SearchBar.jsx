@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Button } from "../../sandbox/Button"
 
 export const SearchBar = ({ handleSearch }) => {
-    const [input, setInput] = useState
+    const [input, setInput] = useState('')
 
     const handleChange = (event) => {
         setInput(event.target.value)
