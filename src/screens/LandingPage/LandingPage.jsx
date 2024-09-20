@@ -27,7 +27,7 @@ export const LandingPage = ({ setQuery }) => {
           type="text"
           value={input}
           onChange={handleChange}
-          placeholder="serach by name, department, or instructor"
+          placeholder="search by name, department, or instructor"
         />
         <button onClick={handleClick}>
           <span>🔍</span>
