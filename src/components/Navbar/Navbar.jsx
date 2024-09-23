@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./navbar.css";
 import { FaSearch } from "react-icons/fa"; // Make sure to install react-icons if you haven't
 
-export const Navbar = ({ student, handleSignOut, setQuery }) => {
+export const Navbar = ({ student, setQuery }) => {
   const [input, setInput] = useState("");
   const location = useLocation();
   const pathname = location.pathname;
@@ -63,7 +63,7 @@ export const Navbar = ({ student, handleSignOut, setQuery }) => {
             {student ? (
               <div className="right-nav-buttons">
                 <Link to="/students/dashboard">Student Dashboard</Link>
-                <Link onClick={handleSignOut}>Sign Out</Link>
+                <Link to='/logout'>Sign Out</Link>
               </div>
             ) : (
               <div className="nav-right signin-button">
