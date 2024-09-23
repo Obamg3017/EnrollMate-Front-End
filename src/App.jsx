@@ -17,10 +17,11 @@ import { Footer } from "./components/Footer/Footer.jsx";
 const App = () => {
   const [student, setStudent] = useState(null)
   const [query, setQuery] = useState(null)
-
+  
   const handleSignOut = () => {
-    setStudent(null);
-  };
+    setStudent(null)
+    localStorage.removeItem('token')
+  }
 
   return (
     <div>
@@ -42,7 +43,7 @@ const App = () => {
           element={<StudentDashboard student={student} />}
         />
         <Route path="/courses" element={<CourseCatalog query={query} />} />
-        <Route path="/student/enrollments" element={<CourseEnrollment />} />
+        <Route path="/student/enrollments" element={<CourseEnrollment user={student} />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactUs />} />
       </Routes>

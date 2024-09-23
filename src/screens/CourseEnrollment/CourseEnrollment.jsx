@@ -1,29 +1,43 @@
 import { SearchContainer } from "./Courses/SearchContainer"
 import { CourseContainer } from "../../components/CourseCatalog/CourseContainer"
-import { useState } from "react"
-import {Calendar} from './Calendar/Calendar.jsx'
+import { useState, useEffect } from "react"
+import { Calendar } from './Calendar/Calendar.jsx'
+import { showEnrollments, createEnrollment, deleteEnrollment } from "../../services/student.js"
 
-export const CourseEnrollment = () => {
-  const [enrollments, setEnrollments] = useState(null)
+export const CourseEnrollment = ({ user }) => {
+  const [enrollments, setEnrollments] = useState([])
+  const { student } = user
 
-  const dropCourse = () => {
+  useEffect(() => {
+    const showAllEnrollments = async (id) => {
+      const allEnrollments = await showEnrollments(id)
+      setEnrollments(allEnrollments)
+    }
+    showAllEnrollments(student.student_id)
+  }, [])
 
+  const addCourseEnrollment = async (courseId) => {
+    console.log(courseId)
+    await createEnrollment(student.student_id, courseId)
+    const allEnrollments = await showEnrollments(student.student_id)
+    setEnrollments(allEnrollments)
   }
 
-  let dropButton = enrollments ? {
-    function: dropCourse,
-    text: 'Drop Course'
-  } : null
-
-  // consider -->  courseResults && courseResults.length ?
-  const addCourse = async (courseId) => {
-
+  const dropCourseEnrollment = async (enrollmentId) => {
+    await deleteEnrollment(student.student_id, enrollmentId)
+    const allEnrollments = await showEnrollments(student.student_id)
+    setEnrollments(allEnrollments)
   }
 
   let addButton = {
-    function: addCourse,
+    function: addCourseEnrollment,
     text: 'Add Course'
   }
+
+  let dropButton = enrollments ? {
+    function: dropCourseEnrollment,
+    text: 'Drop Course'
+  } : null
 
   return (
     <main className="course-enrollment">
