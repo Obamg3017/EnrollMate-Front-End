@@ -7,6 +7,7 @@ import './course-enrollment.css'
 
 export const CourseEnrollment = ({ user }) => {
   const [enrollments, setEnrollments] = useState([])
+  const [showSearch, setShowSearch] = useState(true)
   const { student } = user
 
   useEffect(() => {
@@ -40,17 +41,28 @@ export const CourseEnrollment = ({ user }) => {
     text: 'Drop Course'
   } : null
 
+  const toggleView = () => {
+    setShowSearch(!showSearch)
+  }
   return (
     <main className="course-enrollment">
-      {/* <div className="enrollment-handler"> */}
-      <SearchContainer addButton={addButton} />
-      <CourseContainer
-        className="enrollment"
-        courses={enrollments}
-        text='No courses added to your enrollment yet!'
-        button={dropButton} />
-      {/* </div> */}
-      {/* <Calendar /> */}
+      <div className="enrollment-handler">
+        <button className="toggle-button" onClick={toggleView}>
+          {showSearch ? "Show My Enrollments" : "Search for Courses"}
+        </button>
+        {showSearch ?
+          <SearchContainer addButton={addButton} /> :
+          <CourseContainer
+            className="enrollment"
+            courses={enrollments}
+            text='No courses added to your enrollment yet!'
+            button={dropButton} />
+        }
+      </div>
+      <div className="calendar-handler">
+        <p>My Schedule</p>
+        <Calendar />
+      </div>
     </main>
   )
 }
