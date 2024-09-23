@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./navbar.css";
 import { FaSearch } from "react-icons/fa"; // Make sure to install react-icons if you haven't
 
-export const Navbar = ({ student, handleSignOut,setQuery }) => {
+export const Navbar = ({ student, handleSignOut, setQuery }) => {
   const [input, setInput] = useState("");
   const location = useLocation();
   const pathname = location.pathname;
@@ -36,33 +36,30 @@ export const Navbar = ({ student, handleSignOut,setQuery }) => {
         </div>
       )}
 
-      {pathname === "/students/dashboard" && (
-        <div className="dashboard-nav">
-          <img src="/EM-SD-logo.png" alt="logo" className="logo" />
-          <div className="search-container">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="searchBar"
-              onChange={handleChange}
-            />
-            <FaSearch onClick={handleClick} className="search-icon" />
-          </div>
-          <div className="right-nav-buttons">
-            <Link to="/students/dashboard">Student Dashboard</Link>
-            <Link onClick={handleSignOut}>Sign Out</Link>
-          </div>
-        </div>
-      )}
-      {pathname !== "/students/dashboard" &&
-        pathname !== "/" &&
+  
+      {pathname !== "/" &&
         pathname !== "/users/login" &&
         pathname !== "/students/register" && (
           <div className="dashboard-nav">
-            <img src="/EM.png" alt="logo" className="logo" />
+            {pathname === "/students/dashboard" ? (
+              <img src="/EM-SD-logo.png" alt="logo" className="logo" />
+            ) : (
+              <img src="/EM.png" alt="logo" className="logo" />
+            )}
 
-            <div></div>
-
+            {pathname === "/courses" ? (
+              <div className="search-container">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="searchBar"
+                  onChange={handleChange}
+                />
+                <FaSearch onClick={handleClick} className="search-icon" />
+              </div>
+            ) : (
+              <div></div>
+            )}
             {student ? (
               <div className="right-nav-buttons">
                 <Link to="/students/dashboard">Student Dashboard</Link>

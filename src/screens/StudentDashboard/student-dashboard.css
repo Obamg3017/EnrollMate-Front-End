@@ -1,0 +1,81 @@
+/* Style for the entire dashboard container */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  padding: 17px 0 0 0;
+}
+
+/* Title of the dashboard */
+.dashboard-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #000000;
+  opacity: 49%;
+  margin-bottom: -120px;
+}
+
+/* Container for both cards */
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 250px;
+}
+
+/* General card styling */
+.card {
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for cards */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for card titles */
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #000000bb;
+  opacity: 59%;
+  font-weight: bolder;
+}
+
+/* Grid layout for icons within the cards */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Styling for individual icons */
+.icon {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* Specific colors for course enrollment and course catalog */
+.enrollment-card {
+  background-color: #e0f7fa;
+}
+
+.catalog-card {
+  background-color: #fce4ec;
+}
+
+
+.fa {
+ color: rgba(0, 42, 255, 0.702);
+}
