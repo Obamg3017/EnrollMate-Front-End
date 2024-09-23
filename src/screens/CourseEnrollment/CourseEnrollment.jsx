@@ -3,6 +3,7 @@ import { CourseContainer } from "../../components/CourseCatalog/CourseContainer"
 import { useState, useEffect } from "react"
 import { Calendar } from './Calendar/Calendar.jsx'
 import { showEnrollments, createEnrollment, deleteEnrollment } from "../../services/student.js"
+import './course-enrollment.css'
 
 export const CourseEnrollment = ({ user }) => {
   const [enrollments, setEnrollments] = useState([])
@@ -41,14 +42,14 @@ export const CourseEnrollment = ({ user }) => {
 
   return (
     <main className="course-enrollment">
-      <div className="enrollment-handler">
-        <SearchContainer addButton={addButton} />
-        <CourseContainer
-          className="enrollment"
-          courses={enrollments}
-          text='No courses added to your enrollment yet!'
-          button={dropButton} />
-      </div>
+      {/* <div className="enrollment-handler"> */}
+      <SearchContainer addButton={addButton} />
+      <CourseContainer
+        className="enrollment"
+        courses={enrollments}
+        text='No courses added to your enrollment yet!'
+        button={dropButton} />
+      {/* </div> */}
       {/* <Calendar /> */}
     </main>
   )

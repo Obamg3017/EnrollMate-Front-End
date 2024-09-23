@@ -1,0 +1,157 @@
+.course-enrollment {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  
+  .student-search-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .enrollment-course-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .student-search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    border: 22px solid #b0c4de;
+    margin: 0px 10px 10px 0px
+  }
+  
+  .student-search-input {
+    padding: 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 18px;
+    margin-right: 20px;
+    flex: 1;
+    width: 100%; /* Make input take full available width */
+    color: #333;
+    background-color: #f2f4f6;
+  }
+  
+  .student-search-button {
+    background-color: #D04635;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .student-search-button:hover {
+    background-color: #C0392B;
+  }
+  
+  .student-search-course-container, .enrollment-course-container {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .student-search-course-card, .enrollment-course-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .student-search-course-card {
+    margin: 0px 10px 0px 0px
+  }
+  
+  .enrollment-course-card {
+    margin: 0px 0px 0px 10px
+  }
+
+  .student-search-course-card > p, .enrollment-course-card > p {
+    margin: 0;
+  }
+  
+  .student-search-course-card > p:nth-child(1),
+  .enrollment-course-card > p:nth-child(1) {
+    flex: 0 0 20%;
+    text-align: center;
+  }
+  
+  .student-search-course-card > div,
+  .enrollment-course-card > div {
+    flex: 0 0 60%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .student-search-course-card > div :first-child,
+  .enrollment-course-card > div :first-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .student-search-course-card > div :last-child,
+  .enrollment-course-card > div :last-child {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .student-search-course-card button,
+  .enrollment-course-card button {
+    flex: 0 0 20%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .student-search-course-card button {
+    background-color: #4CAF50; /* Green for adding enrollment */
+  }
+  
+  .enrollment-course-card button {
+    background-color: #D04635; /* Red for dropping enrollment */
+  }
+  
+  .student-search-course-card button:hover {
+    background-color: #45A049;
+  }
+  
+  .enrollment-course-card button:hover {
+    background-color: #C0392B;
+  }
+  
+  @media (max-width: 768px) {
+    .course-enrollment {
+      flex-direction: column;
+    }
+  
+    .search-container, .enrollment-course-container {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .student-search-course-card, .enrollment-course-card {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .student-search-course-card button,
+    .enrollment-course-card button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  

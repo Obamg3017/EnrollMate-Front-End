@@ -13,13 +13,14 @@ export const SearchBar = ({ handleSearch }) => {
     }
 
     return (
-        <div className="search-bar">
+        <div className="student-search-bar">
             <input
                 type="text"
                 value={input}
                 onChange={handleChange}
+                className="student-search-input"
             />
-            <Button onClick={handleClick} text='Search 🔎' />
+            <button className="student-search-button" onClick={handleClick}> Search 🔎 </button>
         </div>
     )
 }

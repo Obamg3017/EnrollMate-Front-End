@@ -21,14 +21,16 @@ export const SearchContainer = ({ addButton }) => {
   }
 
   return (
-    <div className="search-container">
-      <SearchBar
-        handleSearch={searchCourses} />
-      <CourseContainer
-        className='student-search'
-        courses={courseResults}
-        text='Search for your desired course.'
-        button={button} />
-    </div>
+    <>
+      <div className="student-search-container">
+        <SearchBar
+          handleSearch={searchCourses} />
+        <CourseContainer
+          className='student-search'
+          courses={courseResults}
+          text='Search for your desired course.'
+          button={button} />
+      </div>
+    </>
   )
 }
