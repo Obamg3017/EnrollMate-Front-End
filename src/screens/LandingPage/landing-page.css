@@ -1,0 +1,88 @@
+/* Container for the entire landing page */
+.landing-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #DBECF4; /* Light blue color covering the full landing page */
+}
+
+/* Centering the content on the page */
+.landing-content {
+  text-align: center;
+}
+
+/* Title styling */
+.landing-title {
+  font-size: 3rem;
+  font-family: 'Arial', sans-serif;
+  margin-bottom: 50px;
+}
+
+/* Styling for "Search" in red and bold */
+.search-text {
+  color: #BF4343;
+  font-weight: 700;
+  opacity: 90%;
+}
+
+/* Container for the search bar */
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  border: 22px solid #b0c4de; /* Light border around the search bar */
+  margin-bottom: 190px;
+}
+
+/* Styling for "EnrollMate" in dark blue */
+.landing-title {
+  color: #074289;
+  font-weight: 700;
+  opacity: 90%;
+}
+
+
+
+/* Styling the input inside the search bar */
+.search-input {
+  padding: 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 18px;
+  margin-right: 20px;
+  flex: 1;
+  width: 400px;
+  color: #333;
+  background-color: #f2f4f6;
+}
+
+/* Removing the default outline on the input when focused */
+.search-input:focus {
+  outline: none;
+}
+
+/* Search button styling */
+.search-button {
+  background-color: #D04635; /* Red color for the button */
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Changing the button color on hover */
+.search-button:hover {
+  background-color: #C0392B;
+}
+
+/* Styling the search icon inside the button */
+.search-icon {
+  font-size: 1.5rem;
+  color: white;
+}
