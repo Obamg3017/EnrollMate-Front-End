@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { studentSignUp } from "../../../services/auth"
+import { Link } from "react-router-dom"
+import "./sign-up.css"
 
 export const SignUp = ({ setStudent }) => {
     const [formData, setFormData] = useState({
@@ -28,46 +30,71 @@ export const SignUp = ({ setStudent }) => {
     }
 
     return (
-        <div>
-            <h2>Sign Up!</h2>
-            <form onSubmit={handleSignUp}>
-                <div>
-                    <label htmlFor="name">Full Name:</label>
-                    <input id="name" name="name"
-                        type="text"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label htmlFor="username">Username:</label>
-                    <input id="username" name="username"
-                        type="text"
-                        value={formData.username}
-                        onChange={handleChange}
-                        required />
-                </div>
-                <div>
-                    <label htmlFor="password">Password:</label>
-                    <input id="password" name="password"
-                        type="text"
-                        value={formData.password}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label htmlFor="confirmPassword">Confirm Password:</label>
-                    <input id="confirmPassword" name="confirmPassword"
-                        type="text"
-                        value={formData.confirmPassword}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <button type="submit">Sign Up</button>
-            </form>
-        </div>
-    )
+      <div className="sign-up-container">
+        <h2>Sign Up!</h2>
+        <form className="sign-up-form" autoComplete="off" onSubmit={handleSignUp}>
+          <div className="input-container">
+            <label className="signup-label" htmlFor="name">
+              Full Name:
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="input-container">
+            <label className="signup-label" htmlFor="username">
+              Username:
+            </label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              value={formData.username}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="input-container">
+            <label className="signup-label" htmlFor="password">
+              Password:
+            </label>
+            <input
+              id="password"
+              name="password"
+              type="text"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="input-container">
+            <label htmlFor="confirmPassword" className="signup-label">
+              Confirm Password:
+            </label>
+            <input
+              id="confirmPassword"
+              name="confirmPassword"
+              type="text"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <button type="submit" className="submit-button">
+            Sign Up
+          </button>
+          <span className="signup-span">
+            Already have an account?{" "}
+            <Link to="/users/login" className="already-sign-in">
+              Sign In
+            </Link>
+          </span>
+        </form>
+      </div>
+    );
 }

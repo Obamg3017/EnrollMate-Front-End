@@ -8,7 +8,7 @@ nav {
 }
 .visitor-nav {
   justify-content: flex-end;
-  background-color: transparent;
+  background-color: #DBECF4;
 }
 .nav-right {
   display: flex;
