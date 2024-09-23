@@ -1,0 +1,92 @@
+.contact-main {
+  padding: 40px;
+  background-color: #cce6ff; 
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #074289; 
+  padding: 25px;
+  margin-top: 1px;
+}
+
+.contact-subtitle {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: #074289;
+}
+
+
+.team-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+}
+
+
+.team-member {
+  display: flex;
+  align-items: center; 
+  background-color: #ffffff; 
+  border-radius: 12px; /* Rounded corners */
+  padding: 30px;
+  margin: 15px 0; 
+  box-shadow: 0 4px 8px rgba(0, 21, 103, 0.984); 
+  width: 88%; 
+  
+}
+
+
+.team-info {
+  flex: 1; 
+  margin-right: 20px; 
+}
+
+.team-name {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #074289;
+}
+
+.team-bio {
+  font-size: 1rem;
+  color: #074289;
+  margin: 10px 0; 
+}
+
+
+.team-image {
+  width: 100px; 
+  height: 100px; 
+  object-fit: cover;
+  border-radius: 50%; 
+}
+
+.team-image-two {
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+  object-fit: cover;
+  border-radius: 50%; /* Circular image */
+  border: 5px solid black;
+}
+
+
+
+/* Social media icons */
+.social-icons {
+  display: flex;
+  gap: 15px; /* Space between icons */
+}
+
+.social-icon {
+  color: #001f3f; /* Navy blue */
+  font-size: 1.5rem; /* Size of the icons */
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #9ccac5; /* Teal on hover */
+}
+

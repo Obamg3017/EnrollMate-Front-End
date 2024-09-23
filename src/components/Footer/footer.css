@@ -3,7 +3,7 @@
   background-color: #001f3f; /* Navy blue background */
   color: white; /* White text */
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-between; /* Ensure the left and right sections are on opposite sides */
   align-items: center;
   padding: 15px;
   width: 100%; /* Full width of the screen */
@@ -11,14 +11,12 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  gap: 1250px;
 }
 
 /* Left side styling (Copyright, About, Contact Us) */
 .footer-left {
   display: flex;
   align-items: center;
-  margin-right: 70px;
 }
 
 .footer-links {
@@ -26,8 +24,6 @@
   display: flex;
   gap: 25px;
 }
-
-
 
 .footer-link {
   color: white;
@@ -43,7 +39,13 @@
 /* Right side styling (Social media icons) */
 .footer-right {
   display: flex;
-  align-items:center;
+  align-items: center;
+  margin-right: 50px;
+  gap: 20px; 
+}
+
+.social-links {
+  display: flex;
   gap: 17px;
 }
 
@@ -56,3 +58,4 @@
 .social-link:hover {
   color: #9ccac5; /* Teal on hover */
 }
+
