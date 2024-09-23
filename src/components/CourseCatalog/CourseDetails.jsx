@@ -1,1 +1,0 @@
-// what course details will we need for the catalog, search, and enrollment pages?

@@ -19,7 +19,7 @@ export const SearchBar = ({ handleSearch }) => {
                 value={input}
                 onChange={handleChange}
             />
-            <Button onClick={handleClick} text='Search 🔎' />
+            <button onClick={handleClick}> Search 🔎 </button>
         </div>
     )
 }

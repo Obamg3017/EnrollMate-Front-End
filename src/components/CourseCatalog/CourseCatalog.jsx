@@ -2,6 +2,7 @@ import { FilterContainer } from './FilterContainer.jsx'
 import { CourseContainer } from './CourseContainer.jsx'
 import { useState, useEffect } from 'react'
 import { showCourses } from '../../services/student.js'
+import './course-catalog.css'
 
 export const CourseCatalog = ({ query }) => {
   const [courseResults, setCourseResults] = useState([])
@@ -43,7 +44,7 @@ export const CourseCatalog = ({ query }) => {
         filtersDetails={filtersDetails}
         filterCourses={filterCourses} />
       <CourseContainer
-        className="course-container"
+        className="course-catalog"
         courses={courseResults}
         text='Search or filter your search.'
         button={null} />
