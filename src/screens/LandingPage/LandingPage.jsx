@@ -16,25 +16,6 @@ export const LandingPage = ({ setQuery }) => {
     navigate("/courses");
   }
 
-
-  // return (
-  //   <div>
-  //     <h1>
-  //       <span>Search</span> EnrollMate
-  //     </h1>
-  //     <div>
-  //       <input
-  //         type="text"
-  //         value={input}
-  //         onChange={handleChange}
-  //         placeholder="search by name, department, or instructor"
-  //       />
-  //       <button onClick={handleClick}>
-  //         <span>🔍</span>
-  //       </button>
-  //     </div>
-  //   </div>
-  // );
  return (
    <div className="landing-page-container">
      <div className="landing-content">
