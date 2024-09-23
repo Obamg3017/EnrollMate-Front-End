@@ -1,0 +1,58 @@
+/* Basic footer styling */
+.footer-container {
+  background-color: #001f3f; /* Navy blue background */
+  color: white; /* White text */
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+  padding: 15px;
+  width: 100%; /* Full width of the screen */
+  height: 60px; /* Standard footer height */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  gap: 1250px;
+}
+
+/* Left side styling (Copyright, About, Contact Us) */
+.footer-left {
+  display: flex;
+  align-items: center;
+  margin-right: 70px;
+}
+
+.footer-links {
+  list-style-type: none;
+  display: flex;
+  gap: 25px;
+}
+
+
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* Right side styling (Social media icons) */
+.footer-right {
+  display: flex;
+  align-items:center;
+  gap: 17px;
+}
+
+.social-link {
+  color: white;
+  font-size: 1.7rem;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #9ccac5; /* Teal on hover */
+}
