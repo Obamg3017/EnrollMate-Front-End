@@ -19,8 +19,10 @@ export const CourseCard = ({ className, course, button, enrollmentId }) => {
                 </div> :
                 <div className={`${className}-course-card`}>
                     <p>{department}</p>
-                    <p>{name}</p>
-                    <p>{instructor_display}</p>
+                    <div>
+                        <p>{name}</p>
+                        <p>{instructor_display}</p>
+                    </div>
                     {button ? <button onClick={handleClick}> {button.text} </button> : null}
                 </div>
             }
