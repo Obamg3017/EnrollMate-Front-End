@@ -12,7 +12,8 @@ export const CourseContainer = ({ className, courses, text, button }) => {
                 key={course.course.name + course.course.instructor}
                 className={className}
                 course={course.course}
-                button={button} />
+                button={button}
+                enrollmentId={course.id} />
             })}
           </> :
           <>

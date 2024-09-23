@@ -1,8 +1,10 @@
 
-export const CourseCard = ({ className, course, button }) => {
+export const CourseCard = ({ className, course, button, enrollmentId }) => {
     const { id, department_display, name, description, instructor_display } = course
     const handleClick = () => {
-        button.function(id)
+        if (enrollmentId) {
+            button.function(enrollmentId)
+        } else button.function(id)
     }
 
     return (
