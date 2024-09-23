@@ -13,53 +13,52 @@ export const StudentDashboard = ({}) => {
     navigate("/student/enrollments");
   };
 
-  return (
-    <div>
-      <h1>Student Dashboard</h1>
+ return (
+   <div className="dashboard-container">
+     <h1 className="dashboard-title">Student Dashboard</h1>
 
-      <div>
-        <div onClick={handleCourseEnrollmentClick}>
-          <div>
-            <h2>Course Enrollment</h2>
-          </div>
-          <div>
-            <div>
-              <h1>img1</h1>
-              <h1>img2</h1>
-            </div>
-            <div>
-              <h1>img3</h1>
-              <h1>img4</h1>
-            </div>
-            <div>
-              <h1>img5</h1>
-              <h1>img6</h1>
-            </div>
-          </div>
-        </div>
+     <div className="cards-container">
+       {/* Course Enrollment Card */}
+       <div
+         className="card enrollment-card"
+         onClick={handleCourseEnrollmentClick}
+       >
+         <h2 className="card-title">Course Enrollment</h2>
+         <div className="icon-grid">
+           <div className="icon">
+             <i className="fa fa-book"></i>
+           </div>
+           <div className="icon">
+             <i className="fa fa-user"></i>
+           </div>
+           <div className="icon">
+             <i className="fa fa-check"></i>
+           </div>
+           <div className="icon">
+             <i className="fa fa-pencil"></i>
+           </div>
+         </div>
+       </div>
 
-        <div>
-          <div onClick={handleCourseCatalogClick}>
-            <div>
-              <h2>Course Catalog</h2>
-            </div>
-            <div>
-              <div>
-                <h1>img1</h1>
-                <h1>img2</h1>
-              </div>
-              <div>
-                <h1>img3</h1>
-                <h1>img4</h1>
-              </div>
-              <div>
-                <h1>img5</h1>
-                <h1>img6</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+       {/* Course Catalog Card */}
+       <div className="card catalog-card" onClick={handleCourseCatalogClick}>
+         <h2 className="card-title">Course Catalog</h2>
+         <div className="icon-grid">
+           <div className="icon">
+             <i className="fa fa-book"></i>
+           </div>
+           <div className="icon">
+             <i className="fa fa-user"></i>
+           </div>
+           <div className="icon">
+             <i className="fa fa-check"></i>
+           </div>
+           <div className="icon">
+             <i className="fa fa-pencil"></i>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ );
 };
