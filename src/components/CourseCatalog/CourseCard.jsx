@@ -1,14 +1,19 @@
-import { Button } from "../../screens/sandbox/Button"
 
-export const CourseCard = ({ className, course, button }) => {
-    const { department_display, name, description, instructor_display } = course
+export const CourseCard = ({ className, course, button, enrollmentId }) => {
+    const { id, department_display, name, description, instructor_display } = course
+    const handleClick = () => {
+        if (enrollmentId) {
+            button.function(enrollmentId)
+        } else button.function(id)
+    }
+
     return (
         <div className={`${className}-course-card`}>
             <p>{department_display}</p>
             <p>{name}</p>
             <p>{description}</p>
             <p>{instructor_display}</p>
-            {button ? <Button onClick={button.function} text={button.text} /> : null}
+            {button ? <button onClick={handleClick}> {button.text} </button> : null}
         </div>
     )
 }

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { showCourses } from '../../../services/student.js'
 
 export const SearchContainer = ({ addButton }) => {
-  const [courseResults, setCourseResults] = useState(null)
+  const [courseResults, setCourseResults] = useState([])
 
   let button = courseResults ? addButton : null
 
