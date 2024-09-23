@@ -24,7 +24,7 @@ const App = () => {
 
   return (
     <div>
-      <Navbar student={student} handleSignOut={handleSignOut} />
+      <Navbar student={student} handleSignOut={handleSignOut} setQuery={setQuery}/>
       <Routes>
         <Route
           path="/students/register"
