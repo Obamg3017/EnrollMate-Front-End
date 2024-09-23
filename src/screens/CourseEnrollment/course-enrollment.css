@@ -1,7 +1,7 @@
 .course-enrollment {
     display: flex;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     box-sizing: border-box;
     padding: 20px;
   }
