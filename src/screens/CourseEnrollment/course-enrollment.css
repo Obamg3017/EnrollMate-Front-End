@@ -7,7 +7,7 @@
   }
 
   .enrollment-handler {
-    width: 30%;
+    width: 35%;
     padding-right: 10px;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@
   }
 
   .calendar-handler {
-    width: 70%;
+    width: 65%;
     padding-left: 10px;
     display: flex;
     flex-direction: column;
@@ -23,6 +23,7 @@
   }
 
   .calendar-handler p {
+    margin: 10px 0px;
     color: #074289;
     font-size: 30px;
   }

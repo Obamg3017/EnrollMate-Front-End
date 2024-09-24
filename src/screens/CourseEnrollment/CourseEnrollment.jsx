@@ -1,7 +1,7 @@
 import { SearchContainer } from "./Courses/SearchContainer"
 import { CourseContainer } from "../../components/CourseCatalog/CourseContainer"
+import { StudentEnrollmentSchedule } from "./Calendar/StudentEnrollmentSchedule.jsx"
 import { useState, useEffect } from "react"
-import { Calendar } from './Calendar/Calendar.jsx'
 import { showEnrollments, createEnrollment, deleteEnrollment } from "../../services/student.js"
 import './course-enrollment.css'
 
@@ -19,7 +19,6 @@ export const CourseEnrollment = ({ user }) => {
   }, [])
 
   const addCourseEnrollment = async (courseId) => {
-    console.log(courseId)
     await createEnrollment(student.student_id, courseId)
     const allEnrollments = await showEnrollments(student.student_id)
     setEnrollments(allEnrollments)
@@ -44,6 +43,8 @@ export const CourseEnrollment = ({ user }) => {
   const toggleView = () => {
     setShowSearch(!showSearch)
   }
+
+  let view = "not"
   return (
     <main className="course-enrollment">
       <div className="enrollment-handler">
@@ -61,7 +62,7 @@ export const CourseEnrollment = ({ user }) => {
       </div>
       <div className="calendar-handler">
         <p>My Schedule</p>
-        <Calendar />
+        <StudentEnrollmentSchedule />
       </div>
     </main>
   )
