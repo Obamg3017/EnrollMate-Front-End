@@ -24,7 +24,7 @@ export const CourseCatalog = ({ query }) => {
       } else setCourseResults(allCourses)
     }
     searchCourses(query)
-  }, [])
+  }, [query])
 
   const filterCourses = (filterForm) => {
     const filteredCourses = courseResults.filter((course) => {

@@ -1,8 +1,8 @@
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import "./contact-us.css";
-import image from "../../../public/Femi.png";
-import image1 from "../../../public/Ismael.png";
+import image from "/Femi.png";
+import image1 from "/Ismael.png";
 
 export const ContactUs = () => {
   return (
