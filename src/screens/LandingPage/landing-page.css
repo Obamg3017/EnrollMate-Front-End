@@ -77,12 +77,18 @@
 }
 
 /* Changing the button color on hover */
-.search-button:hover {
-  background-color: #C0392B;
+.search-button:hover{
+   transform: translateY(-10px);
+  box-shadow: 0px 8px 15px #ffffffdb;
+} 
+.search-icon:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 15px #ffffffd8;
 }
 
 /* Styling the search icon inside the button */
 .search-icon {
   font-size: 1.5rem;
   color: white;
+  background-color: #D04635;
 }
