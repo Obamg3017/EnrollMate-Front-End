@@ -34,8 +34,9 @@ export const StudentEnrollmentSchedule = () => {
       viewType: "WorkWeek",
       days: 5,
       startDate: "2024-01-01",
-      // change to day of the week instead of date
-      timeHeaders: [{ groupBy: "Day", format: "dddd" }, { groupBy: "Hour" }],
+      headerDateFormat: "dddd",
+      headerHeight: 30,
+      cellHeight: 33,
       cellDuration: 30,
       startHour: 9,
       businessBeginsHour: 9,

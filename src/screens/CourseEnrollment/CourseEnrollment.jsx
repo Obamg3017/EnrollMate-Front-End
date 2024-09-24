@@ -7,6 +7,7 @@ import './course-enrollment.css'
 
 export const CourseEnrollment = ({ student }) => {
   const [enrollments, setEnrollments] = useState([])
+  const [showSearch, setShowSearch] = useState(true)
   const { student_id } = student
 
   useEffect(() => {
