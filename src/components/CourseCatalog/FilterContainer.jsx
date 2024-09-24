@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 export const FilterContainer = ({ filtersDetails, filterCourses, clearFilters }) => {
     const [filterForm, setFilterForm] = useState({
         department: '',
-        time: '',
+        instructor: '',
     })
     const filterKeys = Object.keys(filtersDetails)
 

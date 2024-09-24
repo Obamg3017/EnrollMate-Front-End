@@ -7,7 +7,8 @@ export const CourseCatalog = ({ query, allCourses }) => {
   const [courseResults, setCourseResults] = useState(null)
 
   const filtersDetails = {
-    department: ['Computer Science', 'Biology', 'Chemistry', 'English', 'Mathematics', 'Physics', 'Economics', 'Political Science', 'History', 'Education']
+    department: ['Computer Science', 'Biology', 'Chemistry', 'English', 'Mathematics', 'Physics', 'Economics', 'Political Science', 'History', 'Education'],
+    instructor: ['Dr. Alan Turing', 'Prof. Emmy Noether', 'Dr. Albert Einstein', 'Dr. Marie Curie', 'Prof. Howard Zinn', "Dr. Sarah Johnson", "Prof. Michael Lee", "Dr. Emily Davis", "Prof. Robert Brown", "Dr. Jessica Martinez", "Prof. William Smith", "Dr. Jennifer Wilson", "Prof. David Anderson", "Dr. Angela Thomas", "Prof. Christopher Harris"]
   }
 
   const searchCourses = (courses, searchTerm) => {
