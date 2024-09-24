@@ -1,31 +1,30 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./navbar.css";
-import { FaSearch } from "react-icons/fa"; 
+import { FaSearch } from "react-icons/fa";
 
 export const Navbar = ({ student, setQuery }) => {
-  const [input, setInput] = useState(""); 
+  const [input, setInput] = useState("");
 
   const location = useLocation();
   const pathname = location.pathname;
   const navigate = useNavigate();
-
 
   const handleChange = (event) => {
     setInput(event.target.value);
   };
 
   const handleClick = () => {
-    setQuery(input); 
-    navigate("/courses"); 
-    setInput(""); 
+    setQuery(input);
+    navigate("/courses");
+    setInput("");
   };
 
   const getNavClassName = () => {
     if (pathname === "/") {
-      return "visitor-nav"; 
+      return "visitor-nav";
     } else if (pathname === "/students/dashboard") {
-      return ""; 
+      return "";
     }
     return "";
   };
@@ -52,6 +51,14 @@ export const Navbar = ({ student, setQuery }) => {
           <div className="dashboard-nav">
             {pathname === "/students/dashboard" ? (
               <img src="/EM-SD-logo.png" alt="logo" className="logo" />
+            ) : pathname === "/student/enrollments" ? (
+              <img
+                src="/EM-Course-Enrollment.png"
+                alt="logo"
+                className="logo"
+              />
+            ) : pathname === "/courses" ? (
+              <img src="/EM-Course-Catalog.png" alt="logo" className="logo" />
             ) : (
               <img src="/EM.png" alt="logo" className="logo" />
             )}
@@ -62,8 +69,8 @@ export const Navbar = ({ student, setQuery }) => {
                   type="text"
                   placeholder="Search courses by name, department, or instructor..."
                   className="searchBar"
-                  value={input} 
-                  onChange={handleChange} 
+                  value={input}
+                  onChange={handleChange}
                 />
                 <FaSearch onClick={handleClick} className="search-icon" />
               </div>
@@ -84,4 +91,3 @@ export const Navbar = ({ student, setQuery }) => {
     </nav>
   );
 };
-
