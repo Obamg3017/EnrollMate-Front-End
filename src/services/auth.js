@@ -13,18 +13,18 @@ const handleResponse = async (response) => {
   return json;
 };
 
-const storeTokenAndGetUser = async (token, student) => {
-  localStorage.setItem("token", token);
-  const thisStudent = { student };
-  return thisStudent;
+const storeTokenAndStudent = async (token, student) => {
+  const studentString = JSON.stringify(student)
+  localStorage.setItem("token", token)
+  localStorage.setItem("student", studentString)
 };
 
-// export const getUser = () => {
-//     const token = localStorage.getItem("token")
-//     if (!token) return null
-//     const user = JSON.parse(atob(token.split('.')[1]))
-//     return user
-// }
+export const getStudent = () => {
+  const studentData = localStorage.getItem("student")
+  if (!studentData) return null
+  const student = JSON.parse(studentData)
+  return student
+}
 
 export const studentSignUp = async (formData) => {
   try {
@@ -34,10 +34,9 @@ export const studentSignUp = async (formData) => {
       body: JSON.stringify(formData),
     });
     const data = await handleResponse(response);
-    const user = await storeTokenAndGetUser(data.access, data.student);
-    console.log(user);
+    await storeTokenAndStudent(data.access, data.student);
     toast.success("Registered Successfully");
-    return user;
+    return data.student
   } catch (error) {
     toast.error("Something went wrong");
     console.error("Student Sign Up Error:", error);
@@ -52,13 +51,13 @@ export const studentSignIn = async (formData) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
-    const data = await handleResponse(response);
-    const user = await storeTokenAndGetUser(data.access, data.student);
-    toast.success("Signed In Successfully");
-    return user;
+    const data = await handleResponse(response)
+    await storeTokenAndStudent(data.access, data.student)
+    toast.success("Signed In Successfully")
+    return data.student
   } catch (error) {
-    toast.error("Something went wrong");
-    console.error("Student Sign In Error:", error);
-    throw error;
+    toast.error("Something went wrong")
+    console.error("Student Sign In Error:", error)
+    throw error
   }
 };

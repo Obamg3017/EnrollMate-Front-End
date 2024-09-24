@@ -5,28 +5,27 @@ import { useState, useEffect } from "react"
 import { showEnrollments, createEnrollment, deleteEnrollment } from "../../services/student.js"
 import './course-enrollment.css'
 
-export const CourseEnrollment = ({ user }) => {
+export const CourseEnrollment = ({ student }) => {
   const [enrollments, setEnrollments] = useState([])
-  const [showSearch, setShowSearch] = useState(true)
-  const { student } = user
+  const { student_id } = student
 
   useEffect(() => {
     const showAllEnrollments = async (id) => {
       const allEnrollments = await showEnrollments(id)
       setEnrollments(allEnrollments)
     }
-    showAllEnrollments(student.student_id)
+    showAllEnrollments(student_id)
   }, [])
 
   const addCourseEnrollment = async (courseId) => {
-    await createEnrollment(student.student_id, courseId)
-    const allEnrollments = await showEnrollments(student.student_id)
+    await createEnrollment(student_id, courseId)
+    const allEnrollments = await showEnrollments(student_id)
     setEnrollments(allEnrollments)
   }
 
   const dropCourseEnrollment = async (enrollmentId) => {
-    await deleteEnrollment(student.student_id, enrollmentId)
-    const allEnrollments = await showEnrollments(student.student_id)
+    await deleteEnrollment(student_id, enrollmentId)
+    const allEnrollments = await showEnrollments(student_id)
     setEnrollments(allEnrollments)
   }
 

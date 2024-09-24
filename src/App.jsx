@@ -13,9 +13,10 @@ import { About } from "./screens/About/About.jsx";
 import { ContactUs } from "./screens/ContactUs/ContactUs.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
 import { SignOut } from './screens/Auth/SignOut.jsx';
+import { getStudent } from './services/auth.js';
 
 const App = () => {
-  const [student, setStudent] = useState(null)
+  const [student, setStudent] = useState(getStudent())
   const [query, setQuery] = useState(null)
 
   return (
@@ -38,10 +39,10 @@ const App = () => {
           element={<StudentDashboard student={student} />}
         />
         <Route path="/courses" element={<CourseCatalog query={query} />} />
-        <Route path="/student/enrollments" element={<CourseEnrollment user={student} />} />
+        <Route path="/student/enrollments" element={<CourseEnrollment student={student} />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactUs />} />
-        <Route path='/logout' element={<SignOut setStudent={setStudent} user={student} />} />
+        <Route path='/logout' element={<SignOut setStudent={setStudent} student={student} />} />
       </Routes>
       <Footer />
       <Toaster />

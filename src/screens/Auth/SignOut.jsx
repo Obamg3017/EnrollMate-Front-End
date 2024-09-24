@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
-export const SignOut = ({ setStudent, user }) => {
+export const SignOut = ({ setStudent, student }) => {
 
     const navigate = useNavigate()
 
@@ -9,13 +9,14 @@ export const SignOut = ({ setStudent, user }) => {
         const signOut = () => {
             setStudent(null)
             localStorage.removeItem('token')
+            localStorage.removeItem('student')
             navigate('/')
         }
         signOut()
     }, [])
     return (
         <>
-        {user ? <p>Setting user to null...</p> : <p>Navigating to home...</p>}
+        {student == null ? <p>Setting user to null...</p> : <p>Navigating to home...</p>}
         </>
     )
 }
