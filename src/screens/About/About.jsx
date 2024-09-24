@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../../public/Graduation.png"
+import image3 from "/Graduation.png"
 import "./about.css"; 
 
 
@@ -27,7 +27,7 @@ export const About = () => {
 
         <div className="about-right">
           <img
-            src={image}
+            src={image3}
             alt="EnrollMate"
             className="about-image"
           />
