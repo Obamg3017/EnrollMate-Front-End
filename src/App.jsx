@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import { Toaster } from "react-hot-toast";
@@ -14,14 +14,24 @@ import { ContactUs } from "./screens/ContactUs/ContactUs.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
 import { SignOut } from './screens/Auth/SignOut.jsx';
 import { getStudent } from './services/auth.js';
+import { showCourses } from './services/student.js';
 
 const App = () => {
   const [student, setStudent] = useState(getStudent())
   const [query, setQuery] = useState(null)
+  const [allCourses, setAllCourses] = useState([])
+
+  useEffect(() => {
+    const getCourses = async () => {
+      const allCourses = await showCourses()
+      setAllCourses(allCourses)
+    }
+    getCourses()
+  },[])
 
   return (
     <div>
-      <Navbar student={student} setQuery={setQuery}/>
+      <Navbar student={student} setQuery={setQuery} />
       <Routes>
         <Route
           path="/students/register"
@@ -38,7 +48,7 @@ const App = () => {
           path="/students/dashboard"
           element={<StudentDashboard student={student} />}
         />
-        <Route path="/courses" element={<CourseCatalog query={query} />} />
+        <Route path="/courses" element={<CourseCatalog query={query} allCourses={allCourses} setQuery={setQuery} />} />
         <Route path="/student/enrollments" element={<CourseEnrollment student={student} />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactUs />} />
