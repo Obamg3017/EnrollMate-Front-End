@@ -1,7 +1,6 @@
 import { CourseCard } from "./CourseCard"
 
 export const CourseContainer = ({ className, courses, text, button }) => {
-
   return (
     <div className={`${className}-course-container`}>
       {courses && courses.length > 0 ?

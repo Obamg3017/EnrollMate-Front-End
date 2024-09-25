@@ -52,7 +52,7 @@ export const CourseEnrollment = ({ student }) => {
           {showSearch ? "Show My Enrollments" : "Search for Courses"}
         </button>
         {showSearch ?
-          <SearchContainer addButton={addButton} /> :
+          <SearchContainer addButton={addButton} enrollments={enrollments}/> :
           <CourseContainer
             className="enrollment"
             courses={enrollments}
@@ -62,7 +62,7 @@ export const CourseEnrollment = ({ student }) => {
       </div>
       <div className="calendar-handler">
         <p>My Schedule</p>
-        <StudentEnrollmentSchedule />
+        {/* <StudentEnrollmentSchedule enrollments={enrollments} /> */}
       </div>
     </main>
   )

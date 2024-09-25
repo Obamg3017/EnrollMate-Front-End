@@ -1,31 +1,37 @@
 import { useState, useEffect, useRef } from "react"
 import { DayPilotCalendar } from "@daypilot/daypilot-lite-react"
 
-export const StudentEnrollmentSchedule = () => {
+const dayMapper = {
+  MWF: ['2024-01-01', '2024-01-03', '2024-01-05'],
+  TTH: ['2024-01-02', '2024-01-04']
+}
+
+const createNewDate = (dateTime, newDate) => {
+  const oldTime = dateTime.split('T')[1]
+  return `${newDate}T${oldTime}`
+}
+
+const createScheduleEvents = (enrollments) => {
+  let scheduleEvents = []
+  for (let i = 0; i < enrollments.length; i++) {
+    const { id, name, days, start, end } = enrollments[i].course
+    const dates = dayMapper[days]
+
+    for (let j = 0; j < dates.length; j++) {
+      scheduleEvents.push({ id: `${id}-${j + 1}`, text: name, start: createNewDate(start, dates[j]), end: createNewDate(end, dates[j]) })
+    }
+  }
+  return scheduleEvents
+}
+
+export const StudentEnrollmentSchedule = ({ enrollments }) => {
   const calendarRef = useRef(null)
-  const [events, setEvents] = useState([
-    {
-      id: "1",
-      text: "Meeting",
-      start: "2024-01-01T09:00:00",
-      end: "2024-01-01T11:00:00",
-      resource: "monday",
-    },
-    {
-      id: "2",
-      text: "Conference Call",
-      start: "2024-01-02T13:00:00",
-      end: "2024-01-02T14:00:00",
-      resource: "tuesday",
-    },
-    {
-      id: "3",
-      text: "Project Work",
-      start: "2024-01-03T10:00:00",
-      end: "2024-01-03T12:00:00",
-      resource: "wednesday",
-    },
-  ])
+  const [events, setEvents] = useState([])
+
+  useEffect(() => {
+    const scheduleEvents = createScheduleEvents(enrollments)
+    setEvents(scheduleEvents)
+  }, [enrollments])
 
   useEffect(() => {
     const calendar = calendarRef.current.control
@@ -46,9 +52,6 @@ export const StudentEnrollmentSchedule = () => {
       timeRangeSelecting: "Disabled",
       eventMoveHandling: "Disabled",
       eventResizeHandling: "Disabled",
-      // setting below allows user to delete event by clicking x
-      // if included, need to make sure also update enrollments
-      // eventDeleteHandling: "Update",
       events: events,
     })
 
