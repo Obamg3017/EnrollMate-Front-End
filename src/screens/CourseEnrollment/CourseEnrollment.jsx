@@ -42,7 +42,7 @@ export const CourseEnrollment = ({ student }) => {
   return (
     <main className="course-enrollment">
       {/* <div className="enrollment-handler"> */}
-      <SearchContainer addButton={addButton} />
+      <SearchContainer addButton={addButton} enrollments={enrollments} />
       <CourseContainer
         className="enrollment"
         courses={enrollments}

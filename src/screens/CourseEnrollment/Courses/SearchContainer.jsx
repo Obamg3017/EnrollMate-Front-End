@@ -3,11 +3,19 @@ import { CourseContainer } from "../../../components/CourseCatalog/CourseContain
 import { useState, useEffect } from "react"
 import { showCourses } from '../../../services/student.js'
 
-export const SearchContainer = ({ addButton }) => {
+export const SearchContainer = ({ addButton, enrollments }) => {
   const [courseResults, setCourseResults] = useState([])
 
   let button = courseResults ? addButton : null
 
+  const filterNonEnrollments = (courses, enrollments) => {
+    if (enrollments.length > 0) {
+      return courses.filter((course) => {
+        return !enrollments.some((enrollment) => enrollment.course.id === course.id)
+      })
+    } else return courses
+  }
+  
   const searchCourses = async (search) => {
     const allCourses = await showCourses()
     if (search) {
@@ -16,8 +24,12 @@ export const SearchContainer = ({ addButton }) => {
           course.name.toLowerCase().includes(search.toLowerCase()) ||
           course.department_display.toLowerCase().includes(search.toLowerCase()) ||
           course.instructor_display.toLowerCase().includes(search.toLowerCase()))
-      setCourseResults(courses)
-    } else setCourseResults(allCourses)
+      const nonEnrollments = filterNonEnrollments(courses, enrollments)
+      setCourseResults(nonEnrollments)
+    } else {
+      const nonEnrollments = filterNonEnrollments(allCourses, enrollments)
+      setCourseResults(nonEnrollments)
+    }
   }
 
   return (
