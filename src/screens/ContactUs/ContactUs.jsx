@@ -14,16 +14,16 @@ export const ContactUs = () => {
           <div className="team-info">
             <h3 className="team-name">Ismael Perez</h3>
             <p className="team-bio">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
+              Ismael Perez is a former mathematics teacher turned software
+              engineer who brings his love for math into the world of coding.
+              With a deep passion for problem-solving, he combines his
+              analytical skills and technical expertise to develop innovative
+              solutions and tackle complex challenges in software development.
+              Ismael enjoys exploring new technologies, continuously learning,
+              and applying his mathematical insights to enhance his work as an
+              engineer. His unique background fuels his approach to coding,
+              where he sees each project as an opportunity to blend logic,
+              creativity, and precision.
             </p>
             <div className="social-icons">
               <a
@@ -78,7 +78,11 @@ export const ContactUs = () => {
               </a>
             </div>
           </div>
-          <img className="team-image-two" src={image} alt="Olorunfemi Bamgbose" />
+          <img
+            className="team-image-two"
+            src={image}
+            alt="Olorunfemi Bamgbose"
+          />
         </div>
       </div>
     </div>
